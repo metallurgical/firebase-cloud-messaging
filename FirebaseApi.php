@@ -72,7 +72,7 @@ class FirebaseApi {
 	}
 
 	public function exec() {
-		$this->exec_run();
+		return $this->exec_run();
 	}
 	
 
@@ -81,6 +81,8 @@ class FirebaseApi {
 		$ch = curl_init();		
 
 		$message = array_merge( $this->target, $this->option, $this->payload );
+
+		//print_r(json_encode($message));
 
 		$options = array( 
 				CURLOPT_URL            => $this->urlEndpoint,
